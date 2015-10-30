@@ -38,7 +38,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * each galilean moon of Jupiter
  *
  */
-
+var galilean_moons = ["Io", "Europa", "Ganymede", "Callisto"];
 
 /* Step 6 φ
  *
@@ -46,7 +46,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * and assign the value of golden_ratio to 1.61803398874
  *
  */
-
+var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -54,7 +54,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * and assign the value of earths_water_composition to 0.71
  *
  */
-
+var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -62,7 +62,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * and assign the value of club_name to "Fight Club"
  *
  */
-
+var club_name = "Fight Club";
 
 /* Step 9
  *
@@ -73,7 +73,11 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  *   male    => "male"
  *   unknown => undefined
  */
-
+var gender = {
+	female: "female",
+	male: "male",
+	unknown: undefined,
+};
 
 /* Step 10
  *
@@ -87,7 +91,12 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  *   gender  => gender.female
  *
  */
-
+var princess_leia = {
+	name: "Leia Organa",
+	money: 890,
+	age: 20,
+	gender: gender.female
+};
 
 /* Step 11
  *
@@ -100,7 +109,12 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  *   jsonformatter.curiousconcept.com => "104.28.5.70"
  *
  */
-
+var domains = {
+	"ycombinator.com": "198.41.190.47",
+    "laughingsquid.com": "162.159.247.97",
+    "slumlordhosting.com": "198.61.179.126",
+    "jsonformatter.curiousconcept.com": "104.28.5.70"
+};
 
 /* Step 12
  *
