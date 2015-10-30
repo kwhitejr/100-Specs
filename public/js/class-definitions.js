@@ -374,6 +374,16 @@ function browseURL(browser) {
  * @return {String}
  *
  */
+// return a string that looks like "<ul> <li> [i] </li> etc </ul>"
+
+function listLivingOrgClass() {
+	var elements = "<ul> ";
+	for (var i = 0; i < livingOrganismClassification.length; i++) {
+		elements += "<li>" + livingOrganismClassification[i] + "</li> ";
+	}
+	elements += "</ul>";
+	return elements;
+}
 
 
 /* Step 26
