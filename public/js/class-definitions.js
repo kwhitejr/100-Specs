@@ -334,7 +334,17 @@ function installLinux(type) {
  * @return {Bool when False, String when True}
  *
  */
-
+function drink(beertype) {
+	if (!beers[beertype]) {
+		return false;
+	} else {
+		if (typeof beers[beertype] == "object") {
+			return "This " + beertype + " is " + beers[beertype][0] + " and " + beers[beertype][1] + ".";
+		} else {
+		return "This " + beertype + " is " + beers[beertype] + ".";
+		}
+	}
+}
 
 /* Step 24
  *
@@ -347,7 +357,13 @@ function installLinux(type) {
  * @return {String if true else return false}
  *
  */
-
+function browseURL(browser) {
+	if (!browsers[browser]) {
+		return false;
+	} else {
+		return browsers[browser];
+	}
+}
 
 /* Step 25
  *
