@@ -408,12 +408,12 @@ function listLivingOrgClass() {
 function favoritePlanet(myplanet) {
 
 	for (var i = 0; i < planets.length; i++) {
-		if (planets[i] !== myplanet) {
-			return myplanet + " is not a planet!";
-		} 
-	var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
-	return "I'm from " + myplanet + ", but I wish I could go to " + randomPlanet + ".";
+		if (planets[i] === myplanet) {
+			var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+			return "I'm from " + myplanet + ", but I wish I could go to " + randomPlanet + ".";
+		}  	
 	}
+	return myplanet + " is not a planet!";
 }
 
 /* Step 27
