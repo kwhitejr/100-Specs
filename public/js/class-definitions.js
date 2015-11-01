@@ -438,22 +438,23 @@ function favoritePlanet(myplanet) {
  *   earnMoney
  *
  */
-// class Person {
-// 	constructor(name, money, age, gender) {
-// 		this.name = name;
-// 		this.money = money;
-// 		this.age = age;
-// 		this.gender = gender;
-// 	}
+var Person = function(name, money, age, gender){
+		this.name = name;
+		this.money = money;
+		this.age = age;
+		this.gender = gender;
 
-// 	spendMoney(x) {
-// 		return this.money - x;
-// 	}
 
-// 	earnMoney(x) {
-// 		return this.money + x;
-// 	}
-// }
+};
+
+Person.prototype.spendMoney = function(x) {
+		return this.money -= x;
+};
+
+Person.prototype.earnMoney = function(x) {
+		return this.money += x;
+};
+
 
 /* Step 28
  *
