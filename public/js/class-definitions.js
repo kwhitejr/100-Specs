@@ -407,12 +407,14 @@ function listLivingOrgClass() {
  */
 function favoritePlanet(myplanet) {
 
-	for (var i = 0; i < planets.length; i++) {
-		if (planets[i] === myplanet) {
-			var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+	for (var i = 0; i < planets.length; i++) { // loop through all planets in the 'planets' array
+		if (planets[i] === myplanet) { // check if 'myplanet' input is in 'planets' array at index [i]
+			// if above returns true, then pick a random planet from the 'planets' array and then return the required string
+			var randomPlanet = planets[Math.floor(Math.random() * planets.length)]; 
 			return "I'm from " + myplanet + ", but I wish I could go to " + randomPlanet + ".";
 		}  	
 	}
+	// This return statement is outside the for-loop because otherwise the loop would only check the first planet in the 'planets' array. I.e., we need to loop through and check all the planets in the array first, and if there are no matches then return the fail string.
 	return myplanet + " is not a planet!";
 }
 
@@ -443,8 +445,6 @@ var Person = function(name, money, age, gender){
 		this.money = money;
 		this.age = age;
 		this.gender = gender;
-
-
 };
 
 Person.prototype.spendMoney = function(x) {
@@ -587,7 +587,18 @@ Garden.prototype.grow = function() {
  *   removePlanet
  *
  */
+var SolarSystem = function(planets) {
+	this.planets = [];
+};
 
+SolarSystem.prototype.addPlanet = function(planet) {
+	this.planets.push(planet);
+};
+
+SolarSystem.prototype.removePlanet = function(planet) {
+	var i = this.planets.indexOf(planet);
+	this.planets.splice(i, 1);
+};
 
 /* Step 33
  *
