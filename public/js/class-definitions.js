@@ -492,7 +492,10 @@ var purchaseLaptop = function(laptop) {
  * @return {Bool}
  *
  */
-
+var canTalkAbout = function(club) {
+	return club !== club_name;
+};
+// var club_name = "Fight Club";
 
 /* Step 30
  *
@@ -514,7 +517,15 @@ var purchaseLaptop = function(laptop) {
  *   write
  *
  */
+var Pen = function(color) {
+	this.color = color;
+};
 
+Pen.prototype.write = function(msg) {
+	var answer = this.color + ": " + msg;
+	console.log(answer);
+	return answer;
+};
 
 /* Step 31
  *
@@ -542,6 +553,7 @@ var purchaseLaptop = function(laptop) {
  *   grow
  *
  */
+ 
 
 
 /* Step 32
