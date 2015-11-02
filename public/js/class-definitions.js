@@ -632,6 +632,31 @@ SolarSystem.prototype.removePlanet = function(planet) {
  *   marries
  *
  */
+var PrincessLeia = function(name, money, age, gender, isInTrouble) {
+	this.isInTrouble = null;
+};
+
+PrincessLeia.prototype = Object.create(Person.prototype);
+
+PrincessLeia.prototype.shootsGun = function() {
+	return "Leia shoots her gun wildly";
+	this.isInTrouble = false;
+}
+
+PrincessLeia.prototype.getsInTrouble = function() {
+	return "Help me Obi-wan Kenobi, you're my only hope";
+	this.isInTrouble = true;
+}
+
+PrincessLeia.prototype.marries = function(lover) {
+	if (lover === "Han Solo") {
+		return true;
+	} else if (lover === "Luke Skywalker") {
+		return false, "Gross!";
+	} else {
+		return false;
+	}
+}
 
 
 /* Step 34
@@ -639,7 +664,7 @@ SolarSystem.prototype.removePlanet = function(planet) {
  * Define a class named "Stapler" with properties "color"
  * and "maxPapers". Add a method "staplePapers" that accepts a
  * number of papers as a parameter and returns true if the
- * papers are less than or equal to the papers and false
+ * papers are less than or equal to the papers and false // incorrect instructions
  * if there are too many papers to staple.
  *
  * class
@@ -651,7 +676,14 @@ SolarSystem.prototype.removePlanet = function(planet) {
  *   staplePapers
  *
  */
+var Stapler = function(color, maxPapers){
+	this.color = color;
+	this.maxPapers = maxPapers;
+}
 
+Stapler.prototype.staplePapers = function(num) {
+	return num <= this.maxPapers;
+}
 
 /* Step 35
  *
