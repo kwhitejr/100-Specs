@@ -308,7 +308,7 @@ function addNumbers(a, b) {
  *
  */
 function installLinux(type) {
-	
+
 	for (var i = 0; i < linuxFlavors.length; i++) {
 		if (linuxFlavors[i] == type) {
 			return true;}
@@ -410,9 +410,9 @@ function favoritePlanet(myplanet) {
 	for (var i = 0; i < planets.length; i++) { // loop through all planets in the 'planets' array
 		if (planets[i] === myplanet) { // check if 'myplanet' input is in 'planets' array at index [i]
 			// if above returns true, then pick a random planet from the 'planets' array and then return the required string
-			var randomPlanet = planets[Math.floor(Math.random() * planets.length)]; 
+			var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
 			return "I'm from " + myplanet + ", but I wish I could go to " + randomPlanet + ".";
-		}  	
+		}
 	}
 	// This return statement is outside the for-loop because otherwise the loop would only check the first planet in the 'planets' array. I.e., we need to loop through and check all the planets in the array first, and if there are no matches then return the fail string.
 	return myplanet + " is not a planet!";
@@ -632,21 +632,22 @@ SolarSystem.prototype.removePlanet = function(planet) {
  *   marries
  *
  */
-var PrincessLeia = function(name, money, age, gender, isInTrouble) {
-	this.isInTrouble = null;
+var PrincessLeia = function(name, money, age, gender) {
+  Person.call(this, name, money, age, gender);
+  this.isInTrouble = null;
 };
 
 PrincessLeia.prototype = Object.create(Person.prototype);
 
 PrincessLeia.prototype.shootsGun = function() {
-	return "Leia shoots her gun wildly";
 	this.isInTrouble = false;
-}
+  return "Leia shoots her gun wildly";
+};
 
 PrincessLeia.prototype.getsInTrouble = function() {
-	return "Help me Obi-wan Kenobi, you're my only hope";
 	this.isInTrouble = true;
-}
+  return "Help me Obi-wan Kenobi, you're my only hope";
+};
 
 PrincessLeia.prototype.marries = function(lover) {
 	if (lover === "Han Solo") {
@@ -656,7 +657,7 @@ PrincessLeia.prototype.marries = function(lover) {
 	} else {
 		return false;
 	}
-}
+};
 
 
 /* Step 34
@@ -679,11 +680,11 @@ PrincessLeia.prototype.marries = function(lover) {
 var Stapler = function(color, maxPapers){
 	this.color = color;
 	this.maxPapers = maxPapers;
-}
+};
 
 Stapler.prototype.staplePapers = function(num) {
 	return num <= this.maxPapers;
-}
+};
 
 /* Step 35
  *
@@ -694,7 +695,7 @@ Stapler.prototype.staplePapers = function(num) {
  * Add a method named 'addDiscipline' that takes a string as an argument and
  * adds it to the discipline property. Return the value of the discipline property
  *
- * Add a method named 'checkDisciple' that takes a string as an argument and
+ * Add a method named 'checkDisciple' *** SPELLING *** that takes a string as an argument and
  * checks if the argument can be found in the discipline property. Return false
  * if it is not found otherwise return back true.
  *
@@ -723,7 +724,42 @@ Stapler.prototype.staplePapers = function(num) {
  *   addDiscovery
  *
  */
+var Scientist = function(name, money, age, gender) {
+  Person.call(this, name, money, age, gender);
+  this.disciplines = [];
+  this.discoveries = [];
+};
 
+Scientist.prototype = Object.create(Person.prototype);
+
+Scientist.prototype.addDiscipline = function(discipline) {
+  this.disciplines.push(discipline);
+  return this.disciplines;
+};
+
+Scientist.prototype.checkDiscipline = function(discipline) {
+  if (this.disciplines.indexOf(discipline) > -1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+Scientist.prototype.addDiscovery = function(discovery) {
+  this.discoveries.push(discovery);
+  if (this.discoveries.length >= 3) {
+    str = "I discovered ";
+    for (i = 0; i < this.discoveries.length - 1; i++) {
+      str += this.discoveries[i] + ", ";
+    }
+    str += "and " + this.discoveries[this.discoveries.length - 1] + ".";
+    return str;
+  } else if (this.discoveries.length === 2) {
+    return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+  } else {
+    return "I discovered " + this.discoveries[0] + ".";
+  }
+};
 
 /* Step 36
  *
@@ -745,7 +781,15 @@ Stapler.prototype.staplePapers = function(num) {
  *   rob
  *
  */
+var BankAccount = function(balance, owner) {
+  this.balance = balance;
+  this.owner = owner; // should this be a Person constructor?
+};
 
+BankAccount.prototype.withdraw = function(amount) {
+  this.balance -= amount;
+
+};
 
 /* Step 37
  *
