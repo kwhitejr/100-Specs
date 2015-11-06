@@ -788,8 +788,15 @@ var BankAccount = function(balance, owner) {
 
 BankAccount.prototype.withdraw = function(amount) {
   this.balance -= amount;
-
+  this.owner.money += amount;
 };
+
+var kevin = new Person("Kevin", 100, 32, "male");
+var kevinAccount = new BankAccount(50, kevin);
+kevinAccount.withdraw(30);
+console.log(kevin.money);
+console.log(kevinAccount.balance);
+
 
 /* Step 37
  *
